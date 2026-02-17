@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+main {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: #000;
+	background-size: 40px 40px;
+	background-image: linear-gradient(to right, #00126480 1px, transparent 1px), linear-gradient(to bottom, #00126480 1px, transparent 1px);
+	
+}
+
+.ring.r1 {
+	transform: skew(-18deg) rotate(15deg);
+	-webkit-transform: skew(-18deg) rotate(15deg);
+	-moz-transform: skew(-18deg) rotate(15deg);
+}
+
+.ring.r2 {
+	transform: skew(-18deg) rotate(18deg);
+	-webkit-transform: skew(-18deg) rotate(18deg);
+	-moz-transform: skew(-18deg) rotate(18deg);
+}
+
+.ring {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 800px;
+	width: 400px;
+	border: 1px solid #1d8fc436;
+	border-radius: 50%;
+}
+
+.planet {
+	width: 40px;
+	height: 40px;
+	background-color: #1d8fc456;
+	border-radius: 50%;
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	offset-path: ellipse(200px 400px at 200px 400px);
+	animation: moveAlongPath 4s infinite linear;
+}
+
+@keyframes moveAlongPath {
+	from {offset-distance: 0%;}
+	to {offset-distance: 100%;}
+}
+
+.star {
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+}

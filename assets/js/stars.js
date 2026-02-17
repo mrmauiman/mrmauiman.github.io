@@ -1,0 +1,101 @@
+// var vw = window.innerWidth;
+// var vh = window.innerHeight;
+var vw = screen.width;
+var vh = screen.height;
+
+var textures = document.querySelectorAll(".star");
+var main = document.querySelector("main");
+var frag = document.createDocumentFragment();
+
+var appearMin = 0.3;
+var appearMax = 0.8;
+
+var delayMin = 2;
+var delayMax = 6;
+
+var durationMin = 0.3;
+var durationMax = 1;
+
+var minScale = 0.01;
+var maxScale = 0.03;
+
+var numAnimations = 5;
+var numStars = 300;
+
+var stars = [];
+var eases = [];
+
+for (var i = 0; i < numAnimations; i++) {
+	var ease = new RoughEase({
+		template: Linear.easeNone,
+		strength: random(1, 3),
+		points: random(50, 200)|0,
+		taper: "both",
+		randomize: true,
+		clamp: true
+	});
+
+	eases.push(ease);
+}
+
+window.addEventListener("load", onLoad);
+
+function onLoad() {
+	for (var i = 0; i < numStars; i++) {
+		stars.push(createStar());
+	}
+
+	main.appendChild(frag);
+	checkStars();
+}
+
+function checkStars() {
+	console.log(main.getElementsByClassName("star").length);
+	setTimeout(checkStars, 5000);
+}
+
+function createStar() {
+	var index = random(textures.length)|0;
+	var star = textures[index].cloneNode(true);
+	frag.appendChild(star);
+
+	TweenLite.set(star, {
+		rotation: random(360),
+		xPercent: -50,
+		yPercent: -50,
+		scale: 0,
+		x: random(vw),
+		y: random(vh)
+	});
+
+	var tl = new TimelineMax();
+
+	for (var i = 0; i < numAnimations; i++) {
+		var ease1 = eases[random(numAnimations)|0];
+		var ease2 = eases[random(numAnimations)|0];
+
+		var alpha = random(0.7, 1);
+		var scale = random(minScale, maxScale);
+
+		var appear = "+=" + random(appearMin, appearMax);
+		var delay = "+=" + random(delayMin, delayMax);
+		var duration1 = random(durationMin, durationMax);
+		var duration2 = random(durationMin, durationMax);
+
+		tl.to(star, duration1, {autoAlpha: alpha, scale: scale, ease: ease1}, delay).to(star, duration2, {autoAlpha: 0, scale: 0, ease: ease2}, appear)
+	}
+
+	tl.progress(random(1));
+	tl.repeat(-1);
+
+	return {
+		element: star,
+		timeline: tl
+	};
+}
+
+function random(min, max) {
+	if (max == null) {max = min; min = 0;}
+	if (min > max) {var tmp = min; min = max; max = tmp;}
+	return min + (max - min) * Math.random();
+}
