@@ -140,6 +140,10 @@
 	scrollbar-color: #3c158a transparent;
 }
 
+.full-screen-container {
+	height: 100%;
+}
+
 .v-box-container {
 	width: 100%;
 	padding: 15px 25px;
@@ -280,4 +284,30 @@
 
 .invisible {
 	visibility: hidden;
+}
+
+.edu-item {
+	text-align: left;
+
+	margin-bottom: 50px;
+
+	.edu-title {
+		font-size: 28pt;
+		font-weight: 400;
+	}
+
+	.edu-subtitle {
+		font-size: 14pt;
+	}
+
+}
+
+.email {
+	font-size: 20pt;
+	text-decoration: none;
+	color: yellow;
+}
+
+.phone {
+	font-size: 20pt;
 }
