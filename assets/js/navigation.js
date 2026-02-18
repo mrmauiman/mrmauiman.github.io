@@ -29,13 +29,23 @@ var pages = {
 };
 var game_development = document.querySelector("#game-development");
 
+var scroll_containers = document.getElementsByClassName("scrollable-container");
+
+function scrollAllToTop() {
+	for(var i = 0; i < scroll_containers.length; i++) {
+		scroll_containers[i].scrollTo(0, 0);
+	}
+}
+
 function navigate(page) {
-	console.log(portfolio);
 	if (page == current_page) return;
+
+	scrollAllToTop();
 
 	pages[current_page].content.classList.remove("selected");
 	pages[current_page].title.classList.remove("selected");
 	current_page = page;
+	pages[current_page].content.classList.remove("invisible");
 	pages[current_page].content.classList.add("selected");
 	pages[current_page].title.classList.add("selected");
 }

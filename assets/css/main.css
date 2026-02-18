@@ -135,6 +135,7 @@
 
 .scrollable-container {
 	overflow-y: scroll;
+	overflow-x: hidden;
 	width: 100%;
 	scrollbar-color: #3c158a transparent;
 }
@@ -275,4 +276,8 @@
 	color: #5f49ba50;
 	font-size: 128pt;
 	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.invisible {
+	visibility: hidden;
 }
