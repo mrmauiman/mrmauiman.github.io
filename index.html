@@ -9,46 +9,133 @@
 		<title>Maui Kelley</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="images/star.png" type="image/png" />
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Jersey+10&family=Piedra&family=Rubik+Dirt&family=Sixtyfour&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
 		<!-- Style Sheets -->
+		<script src="https://kit.fontawesome.com/a6e08dc4aa.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/background.css" />
+		<!-- Preloaded JS files -->
 	</head>
 	<body class="is-preload">
 
 		<main>
+			<div class="ring r1">
+				<div class="planet"></div>
+			</div>
+			<div class="ring r2"></div>
 			<div id="page-contents">
 				<div class="panel">
 					<div class="panel-border"></div>
 					<div class="page-title">
 						<div id="portfolio-title" class="selected">Maui Kelley's Portfolio</div>
-						<div id="gam-development-title" class="">Game Development</div>
+						<div id="game-development-title" class=""><span class="breadcrumb" onclick="navigate('portfolio')"><i class="fa fa-home"></i></span> <i class="fa fa-chevron-right"></i> Game Development</div>
+						<div id="professional-experience-title" class=""><span class="breadcrumb" onclick="navigate('portfolio')"><i class="fa fa-home"></i></span> <i class="fa fa-chevron-right"></i> Professional Experience</div>
+						<div id="education-title" class=""><span class="breadcrumb" onclick="navigate('portfolio')"><i class="fa fa-home"></i></span> <i class="fa fa-chevron-right"></i> Education</div>
+						<div id="timeline-title" class=""><span class="breadcrumb" onclick="navigate('portfolio')"><i class="fa fa-home"></i></span> <i class="fa fa-chevron-right"></i> Timeline</div>
+						<div id="contact-title" class=""><span class="breadcrumb" onclick="navigate('portfolio')"><i class="fa fa-home"></i></span> <i class="fa fa-chevron-right"></i> Contact</div>
 					</div>
 					<div class="panel-content">
-						<div id="portfolio" class="v-box-container selected">
-							<button class="fancy-button">Game Development</button>
-							<button class="fancy-button">Web Development</button>
-							<button class="fancy-button">Professional Experience</button>
-							<button class="fancy-button">Education</button>
-							<button class="fancy-button">Timeline</button>
-							<button class="fancy-button">Contact</button>
+						<div id="portfolio" class="panel-page v-box-container selected">
+							<button class="fancy-button" onclick="navigate('game-development')">Game Development</button>
+							<button class="fancy-button" onclick="navigate('professional-experience')">Professional Experience</button>
+							<button class="fancy-button" onclick="navigate('education')">Education</button>
+							<button class="fancy-button" onclick="navigate('timeline')">Timeline</button>
+							<button class="fancy-button" onclick="navigate('contact')">Contact</button>
 						</div>
-						<div id="game-development" class="v-box-container">
-							<h1>Test</h1>
-							<h4>test</h4>
-							<p>test</p>
+						<div id="game-development" class="panel-page scrollable-container">
+							<div class="v-box-container">
+								<div class="game">
+									<div class="game-data">
+										<div class="game-title">The Legend of Zelda 3D</div>
+										<p class="game-information">
+											A fan remake of the original Legend of Zelda using a unique 3D sprite effect.
+											I have been streaming the creation of this project on YouTube as a resource for those getting into game development.
+										</p>
+										<a class="fancy-button" href="https://www.youtube.com/playlist?list=PLnEPJrSYnuM3Y1t2UZ9DcnlWxn_FASm-0">More Information</a>
+									</div>
+									<img class="game-image rot-neg" src="images/zelda-3d-cover.png" width="300px" />
+								</div>
+								<div class="game">
+									<div class="game-data">
+										<div class="game-title">Bingus V.S. The Boomps Gauntlet</div>
+										<p class="game-information">
+											Bingus V.S. The Boomps Gauntlet is a third-person action platformer beat em' up.
+											It was created in the span of 10 days for the <a href="https://itch.io/jam/bigmode-game-jam-2026">Bigmode Game Jam 2026</a> by myself and Evan Jamison.
+										</p>
+										<a class="fancy-button" href="https://maui-games.itch.io/bingus-vs-the-boomps-gauntlet">More Information</a>
+									</div>
+									<img class="game-image rot-neg" src="images/bingus-vs-boomps-cover.png" width="300px" />
+								</div>
+								<div class="game">
+									<div class="game-data">
+										<div class="game-title">Tragedy of Grok the Destroyer</div>
+										<p class="game-information">
+											Tragedy of Grok the Destroyer is a wave survival game where you play as the boss.
+											It was created in the span of 3 days for the <a href="https://itch.io/jam/gmtk-2025">GMTK Game Jam 2025</a> by myself.
+										</p>
+										<a class="fancy-button" href="https://maui-games.itch.io/bingus-vs-the-boomps-gauntlet">More Information</a>
+									</div>
+									<img class="game-image rot-neg" src="images/grok-the-destroyer-cover.png" width="300px" />
+								</div>
+								<button class="fancy-button" onclick="navigate('portfolio')">Return to Portfolio</button>
+							</div>
+						</div>
+						<div id="professional-experience" class="panel-page scrollable-container">
+							<div class="work">
+								<div class="job-title">ServiceNow Consultant</div>
+								<div class="job-subtitle">Oct. 2021 - Oct. 2025 <img src="images/star.png" width="15px"> IntegrityPro Consulting LLC.</div>
+								<hr>
+								<div class="job-description">
+									Responsible for developing high quality business solutions on the ServiceNow platform for internal projects and client ServiceNow applications.
+									<ul>
+										<li>Mid developer on the implementation of SPM, CWM, and a custom portal for a client instance.  Leveraging flow designer, custom portal widgets, and the CWM workspace, we delivered a complete and future proof system to meet the complex business needs of the client.</li>
+										<li>Lead developer on the creation of a custom portal for a client instance.  Leading the team to create a landing page, knowledge base, and custom intake catalog item.  Also implementing a custom workflow processor for the intake form to meet the business needs of the client.</li>
+										<li>Consultant on the implementation of SAM Pro for a client instance, gathering requirements and configuring rules to the clients needs.  Also providing in-depth training on the usage of SAM Pro for the client’s software asset administrators.</li>
+										<li>Lead developer on a form digitization effort for a client, gathering requirements on a per form basis to build a system to allow for the digitization of a wide variety of client forms with varying requirements.</li>
+										<li>Lead developer on an internal physical security ServiceNow custom application to consolidate the various applications used by physical security personnel into a single web portal.  Development is focused on the service portal and has given me a solid foundation for custom portals, custom widgets, scoped apps, third party integrations, and even ServiceNow’s Mobile Studio to create custom mobile experiences for a scoped app. </li>
+										<li>Developed workflows, business rules, client scripts, and UI policies to automate processes and improve efficiency.</li>
+										<li>Administered user access, roles, and groups to ensure secure and compliant ServiceNow usage.</li>
+										<li>Provided end-user training, documentation, and ongoing support to maximize platform adoption and value.</li>
+										<li>Participated in upgrades, patching, and testing to maintain platform stability and performance.</li>
+										<li>Implement applications within ServiceNow on client instances using all facets of configuration, customization, or new functionality development as needed.</li>
+										<li>Develops custom scripts that are in line with industry standards and designed to minimize future technical debt and keep scalability in mind.</li>
+										<li>Work in an agile development team.  Gaining experience creating, implementing, and testing stories.  As well as bringing forward new ideas to ensure a quality product.</li>
+									</ul>
+								</div>
+							</div>
+							<div class="work">
+								<div class="job-title">Full Stack Student Developer</div>
+								<div class="job-subtitle">Aug. 2016 - Dec. 2020 <img src="images/star.png" width="15px"> Roanoke College - IT Deptartment</div>
+								<hr>
+								<div class="job-description">
+									Developed web applications for Roanoke college. Works include Major Declaration, Daily Email, and Form Builder. 
+									<ul>
+										<li>Major Declaration is an application where students go to add and remove Majors, Minors, Concentrations, and Teaching Licensures.</li>
+										<li>Daily Email is an application that sends an email to all faculty, staff, and students about current events at the college.</li>
+										<li>Form Builder is an application that allows faculty or staff members to build any online forms they would need.</li>
+									</ul>
+								</div>
+							</div>
+							<button class="fancy-button" onclick="navigate('portfolio')">Return to Portfolio</button>
+						</div>
+						<div id="education" class="panel-page scrollable-container">
+							<div class="edu-item">B.S. Computer Science <img src="images/star.png" width="15px"> Roanoke College <img src="images/star.png" width="15px"> 2021 </div>
+							<div class="wip">W.I.P.</div>
+						</div>
+						<div id="timeline" class="panel-page scrollable-container">
+							<div class="wip">W.I.P.</div>
+						</div>
+						<div id="contact" class="panel-page scrollable-container">
+							<div>email: maui.kelley.98@gmail.com</div>
+							<div class="wip">W.I.P.</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			<div class="ring r1">
-				<div class="planet"></div>
-			</div>
-			<div class="ring r2"></div>
 		</main>
 
 		<aside style="display:none;">
@@ -58,5 +145,6 @@
 		<!-- Scripts -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 		<script src="assets/js/stars.js"></script>
+		<script src="assets/js/navigation.js"></script>
 	</body>
 </html>

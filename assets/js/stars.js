@@ -46,12 +46,6 @@ function onLoad() {
 	}
 
 	main.appendChild(frag);
-	checkStars();
-}
-
-function checkStars() {
-	console.log(main.getElementsByClassName("star").length);
-	setTimeout(checkStars, 5000);
 }
 
 function createStar() {
