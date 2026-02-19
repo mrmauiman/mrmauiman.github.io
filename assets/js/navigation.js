@@ -18,6 +18,10 @@ var pages = {
 		content: document.querySelector("#education"),
 		title: document.querySelector("#education-title")
 	},
+	"skills": {
+		content: document.querySelector("#skills"),
+		title: document.querySelector("#skills-title")
+	},
 	"timeline": {
 		content: document.querySelector("#timeline"),
 		title: document.querySelector("#timeline-title")
