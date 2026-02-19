@@ -52,7 +52,6 @@ function getDatePos(date){
 	let year_offset = (THIS_YEAR - parseInt(date[2]));
 	let month_offset = ((parseInt(date[0])-1)/12);
 	let day_offset = (((parseInt(date[1]))/31)/12);
-	console.log(date, year_offset, month_offset, day_offset);
 	return year_offset - month_offset - day_offset;
 }
 
@@ -67,10 +66,11 @@ function getBottomPixels(val) {
 function verifyContentFits(event, top, bottom) {
 	top = parseInt(getTopPixels(top));
 	bottom = parseInt(getTopPixels(bottom));
+	let height = (bottom - top);
 	var minHeight = event.clientHeight;
-	console.log(minHeight);
-	console.log(bottom-top);
-	if ((bottom - top) > minHeight) return true;
+	if ((bottom - top) > minHeight) {
+		return true;
+	}
 	
 	event.classList.remove("connect-bottom");
 	var newBottomBar = document.createElement("div");
@@ -81,7 +81,6 @@ function verifyContentFits(event, top, bottom) {
 	} else {
 		newBottomBar.classList.add("right");
 	}
-	console.log(minHeight-(bottom-top));
 	newBottomBar.style.bottom = `${minHeight-(bottom-top)}px`;
 	
 	
