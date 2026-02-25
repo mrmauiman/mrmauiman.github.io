@@ -249,7 +249,7 @@
 		padding: 5px !important;
 	}
 	
-	.email,.phone {
+	.link {
 		font-size: 12pt !important;
 	}
 }
@@ -349,10 +349,11 @@
 
 }
 
-.email {
+.link {
 	font-size: 20pt;
 	text-decoration: none;
 	color: yellow;
+	flex-grow: 1;
 }
 
 .phone {
@@ -393,4 +394,10 @@
 	tr:last-child > td:last-child {
 		border-bottom-right-radius: 15px;
 	}
+}
+
+.contact-info {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
 }
